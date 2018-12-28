@@ -17,6 +17,14 @@
 * Using the IP and port, open the Tomcat page in web browser  
 `https://[IP]:[PORT]`
 
+2A. **Configure the web server**
+* Create role(s) and user(s) in the file *$TOMCAT_HOME/conf/tomcat-users.xml*  
+  >`<role rolename="manager-gui"/>`  
+  `<role rolename="manager-script"/>`  
+  `<user username="admin" password="admin" roles="manager-gui, manager-script"/>`  
+  `<user username="deployer" password="deployer" roles="manager-script"/>`  
+  `<user username="tomcat" password="passw0rd" roles="manager-gui/>`
+
 3. **Run CI/CD Server**: (in either of the following ways)
 * Pull Jenkins docker image and run it
   * `$ docker run -it --rm -d -p 8080:8080 jenkins`    
@@ -33,11 +41,12 @@
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>` 
 
 3A. **Configure the CI/CD server**
-* Git, GitHub plugins
-* Maven Integration plugin
-* Deploy to Container plugin
-* JDK installation
-* Maven installation
+* Install Git, GitHub plugins
+* Install Maven Integration plugin
+* Specify JDK installation
+* Specify Maven installation
+* Install Deploy to Container plugin
+* Set credentials
 
 4. **Create New Job for Continuous Integration (CI) Pipeline**
 * Specify project name: helloworld
