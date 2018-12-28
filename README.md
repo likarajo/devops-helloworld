@@ -23,6 +23,8 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Specify project name: helloworld
 * Specify repository URL: https://github.com/likarajo/devops.git
 * Specify branch: master
-* Specify Build -> Root POM: helloworld/pom.xml
+* Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
+
+
 
 
