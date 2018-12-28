@@ -5,7 +5,7 @@
   <artifactId>devops-helloworld</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>devops-helloworld Maven Webapp</name>
+  <name>devops-helloworld</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -17,8 +17,6 @@
   </dependencies>
   <build>
     <finalName>devops-helloworld</finalName>
-<<<<<<< HEAD
-=======
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -28,6 +26,5 @@
         </configuration>
       </plugin>
     </plugins>
->>>>>>> 69cb542e6513a083f1cea01b609287b72be9b224
   </build>
 </project>
