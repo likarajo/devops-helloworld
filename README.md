@@ -65,6 +65,9 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 6. **On successful build**
 * the war file gets deployed to *$TOMCAT_HOME/webapps*
 
+7. **Configure the job for Continuous Integration/Build and Deployment (CI CD)**
+* Check the required option(s) in Build Triggers section
+
  
 
 
