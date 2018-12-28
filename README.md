@@ -8,7 +8,7 @@
   * `$ docker run -it --rm -d -p 9090:8080 tomcat:8.0`
   * `$ docker ps`  
   `CONTAINER ID        IMAGE          PORTS`  
-  `b39e0ace38a0        tomcat:8.0     0.0.0.0:8888->8080/tcp`
+  `b39e0ace38a0        tomcat:8.0     0.0.0.0:9090->8080/tcp`
 * Download, install, and run startup.sh script
   * Set the desired connector port in *$TOMCAT_HOME/conf/server.xml* file
   * `$ $TOMCAT_HOME/bin/startup.sh`
