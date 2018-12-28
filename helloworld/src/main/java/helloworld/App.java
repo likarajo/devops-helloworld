@@ -1,4 +1,4 @@
-package devops;
+package helloworld;
 
 /**
  * Hello world!
