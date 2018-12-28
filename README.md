@@ -20,5 +20,9 @@
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>`
 
 4. Create New Job (CI)
-* 
+* Specify project name: helloworld
+* Specify repository URL: https://github.com/likarajo/devops.git
+* Specify branch: master
+* Specify Build -> Root POM: helloworld/pom.xml
+
 
