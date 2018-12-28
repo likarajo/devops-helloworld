@@ -41,17 +41,20 @@
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>` 
 
 3A. **Configure the CI/CD server**
-* Install Git, GitHub plugins
-* Install Maven Integration plugin
-* Specify JDK installation
-* Specify Maven installation
-* Install Deploy to Container plugin
-* Set Web Server credentials -> Global credentials
-  * (User and password) Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
-* Set repository access token credentials -> Global credentials
-  * (Secret Text) GitHub Access Token
-* Set repository credentials -> Global credentials
-  * (User and password) GitHub Credentials
+* Manage Plugins
+  * Install *Git* plugin
+  * Install *GitHub* plugin
+  * Install *Maven Integration* plugin
+  * Install *Deploy to Container* plugins
+* Global Tool Configuration
+  * Specify *JDK* installation
+  * Specify *Maven* installation
+* Configure Credentials (Global)
+  * Set Web server credentials (User and password): Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
+  * Set Repository access token credentials (Secret Text): GitHub Access Token
+  * Set repository credentials (User and password): GitHub Credentials
+* Configure System
+  * Add GitHub Server (use the GitHub access token)
 
 4. **Create New Job and configure for Integration i.e. Build**
 * Specify Project name: devops-helloworld
