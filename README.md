@@ -48,8 +48,10 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Install Deploy to Container plugin
 * Set Web Server credentials -> Global credentials
   * (User and password) Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
-* Set Repository credentials -> Global credentials
-  * (Secret Text) GitHub Token
+* Set repository access token credentials -> Global credentials
+  * (Secret Text) GitHub Access Token
+* Set repository credentials -> Global credentials
+  * (User and password) GitHub Credentials
 
 4. **Create New Job and configure for Integration i.e. Build**
 * Specify Project name: devops-helloworld
