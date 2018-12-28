@@ -4,13 +4,13 @@
 * push the project files to Git repository
 
 2. Run Web Server: Pull Tomcat docker image and run it
-* `$ docker run -it --rm -p 8888:8080 tomcat:8.0`
+* `$ docker run -it --rm -d -p 8888:8080 tomcat:8.0`
 * `$ docker ps`  
 `CONTAINER ID        IMAGE          PORTS`  
 `b39e0ace38a0        tomcat:8.0     0.0.0.0:8888->8080/tcp`
 
 3. Run CI/CD Server: Pull Jenkins docker image and run it
-* `$ docker run -it --rm -p 8080:8080 jenkins`    
+* `$ docker run -it --rm -d -p 8080:8080 jenkins`    
 * `$ docker ps`  
 `CONTAINER ID        IMAGE         PORTS`  
 `b39e0ace38a0        jenkins       0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp`
