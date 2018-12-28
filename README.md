@@ -46,7 +46,8 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Specify JDK installation
 * Specify Maven installation
 * Install Deploy to Container plugin
-* Set credentials
+* Set Web Server credentials -> Global credentials
+  * Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
 
 4. **Create New Job for Continuous Integration (CI) Pipeline**
 * Specify project name: helloworld
