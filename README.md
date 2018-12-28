@@ -41,28 +41,41 @@
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>` 
 
 3A. **Configure the CI/CD server**
-* Install Git, GitHub plugins
-* Install Maven Integration plugin
-* Specify JDK installation
-* Specify Maven installation
-* Install Deploy to Container plugin
-* Set Web Server credentials -> Global credentials
-  * Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
+* Manage Plugins
+  * Install *Git* plugin
+  * Install *GitHub* plugin
+  * Install *Maven Integration* plugin
+  * Install *Deploy to Container* plugins
+* Global Tool Configuration
+  * Specify *JDK* installation
+  * Specify *Maven* installation
+* Configure Credentials (Global)
+  * Set Web server credentials (User and password): Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
+  * Set Repository access token credentials (Secret Text): GitHub Access Token {GitHub_Profile>settings>Developer settings>Personal Access Tokens} + {GitHub_Repo>settings>webhooks}
+  * Set repository credentials (User and password): GitHub Credentials
+* Configure System
+  * Add GitHub Server (use the GitHub access token)
 
-4. **Create New Job and configure for Continuous Integration (CI) Pipeline**
+4. **Create New Job and configure for Integration i.e. Build**
 * Specify Project name: devops-helloworld
-* Specify Repository URL: https://github.com/likarajo/devops-helloworld.git
-* Specify Branch: master
+* General>GitHub Project>Project URL: https://github.com/likarajo/devops-helloworld
+* SCM>Git>Repository URL: https://github.com/likarajo/devops-helloworld.git
+* Specify Branches to build: master
 * Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
 * Build the project
 
-5. **Configure the job for Continuous Deployment (CD) Pipeline**
+5. **Configure the job for Deployment**
 * Specify Post-build Actions: Deploy war/ear to a container
   * WAR/EAR Files: \**/*.war (the workspace directory)
   * Add Container: Tomcat 8.x; Credentials:<of manager-script user>; URL:<ip and port>
 * Build the project
  
-6. On successful build, the war file gets deployed to *$TOMCAT_HOME/webapps*
+6. **On successful build**
+* the war file gets deployed to *$TOMCAT_HOME/webapps*
+
+7. **Configure the job for Continuous Integration/Build and Deployment (CI CD)**
+* Check the required option(s) in Build Triggers section
+  * GitHub hook trigger for GITScm polling
 
  
 
