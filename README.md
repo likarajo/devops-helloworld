@@ -58,7 +58,7 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 5. **Configure the job for Continuous Deployment (CD) Pipeline**
 * Specify Post-build Actions: Deploy war/ear to a container
   * WAR/EAR Files: \**/*.war (the workspace directory)
-  * Add Container: Tomcat 8.x; Credentials:<of manager-script user>; URL:http://localhost:8088/
+  * Add Container: Tomcat 8.x; Credentials:<of manager-script user>; URL:<ip and port>
  
 
 
