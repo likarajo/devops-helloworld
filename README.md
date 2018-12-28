@@ -51,15 +51,16 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
   * Specify *Maven* installation
 * Configure Credentials (Global)
   * Set Web server credentials (User and password): Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
-  * Set Repository access token credentials (Secret Text): GitHub Access Token {GitHub_Profile>settings>Developer settings>Personal Access Tokens}
+  * Set Repository access token credentials (Secret Text): GitHub Access Token {GitHub_Profile>settings>Developer settings>Personal Access Tokens} + {GitHub_Repo>settings>webhooks}
   * Set repository credentials (User and password): GitHub Credentials
 * Configure System
   * Add GitHub Server (use the GitHub access token)
 
 4. **Create New Job and configure for Integration i.e. Build**
 * Specify Project name: devops-helloworld
-* Specify Repository URL: https://github.com/likarajo/devops-helloworld.git
-* Specify Branch: master
+* General>GitHub Project>Project URL: https://github.com/likarajo/devops-helloworld
+* SCM>Git>Repository URL: https://github.com/likarajo/devops-helloworld.git
+* Specify Branches to build: master
 * Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
 * Build the project
 
