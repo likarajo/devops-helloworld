@@ -50,8 +50,8 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
   * Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
 
 4. **Create New Job and configure for Continuous Integration (CI) Pipeline**
-* Specify Project name: helloworld
-* Specify Repository URL: https://github.com/likarajo/devops.git
+* Specify Project name: devops-helloworld
+* Specify Repository URL: https://github.com/likarajo/devops-helloworld.git
 * Specify Branch: master
 * Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
 * Build the project
@@ -61,6 +61,9 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
   * WAR/EAR Files: \**/*.war (the workspace directory)
   * Add Container: Tomcat 8.x; Credentials:<of manager-script user>; URL:<ip and port>
 * Build the project
+ 
+6. On successful build, the war file gets deployed to *$TOMCAT_HOME/webapps*
+
  
 
 
