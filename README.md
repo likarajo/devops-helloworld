@@ -51,7 +51,7 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
   * Specify *Maven* installation
 * Configure Credentials (Global)
   * Set Web server credentials (User and password): Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
-  * Set Repository access token credentials (Secret Text): GitHub Access Token
+  * Set Repository access token credentials (Secret Text): GitHub Access Token {GitHub_Profile>settings>Developer settings>Personal Access Tokens}
   * Set repository credentials (User and password): GitHub Credentials
 * Configure System
   * Add GitHub Server (use the GitHub access token)
