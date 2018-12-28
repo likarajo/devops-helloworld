@@ -1,5 +1,5 @@
 # devops
-1. **Create and push source code to repository*: Maven web project in GitHub
+1. **Create and push source code to repository**: Maven web project in GitHub
 * `$ mvn archetype:generate -DgroupId=io.github.likarajo -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp`
 * push the project files to Git repository
 
