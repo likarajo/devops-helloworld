@@ -5,3 +5,7 @@
 <web-app>
   <display-name>Web Application</display-name>
 </web-app>
+
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
