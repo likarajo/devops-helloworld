@@ -54,11 +54,13 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Specify Repository URL: https://github.com/likarajo/devops.git
 * Specify Branch: master
 * Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
+* Build the project
 
 5. **Configure the job for Continuous Deployment (CD) Pipeline**
 * Specify Post-build Actions: Deploy war/ear to a container
   * WAR/EAR Files: \**/*.war (the workspace directory)
   * Add Container: Tomcat 8.x; Credentials:<of manager-script user>; URL:<ip and port>
+* Build the project
  
 
 
