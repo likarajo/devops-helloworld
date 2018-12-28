@@ -32,6 +32,13 @@
 * Jenkins initial setup is required using an admin user created and a password generated   
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>` 
 
+3A. **Configure the CI/CD server**
+* Git, GitHub plugins
+* Maven Integrationb plugins
+* Deploy plugin
+* JDK installation
+* Maven installation
+
 4. **Create New Job for Continuous Integration (CI) Pipeline**
 * Specify project name: helloworld
 * Specify repository URL: https://github.com/likarajo/devops.git
