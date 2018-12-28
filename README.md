@@ -34,8 +34,8 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 
 3A. **Configure the CI/CD server**
 * Git, GitHub plugins
-* Maven Integrationb plugins
-* Deploy plugin
+* Maven Integration plugin
+* Deploy to Container plugin
 * JDK installation
 * Maven installation
 
