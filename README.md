@@ -9,11 +9,14 @@
 `CONTAINER ID        IMAGE          PORTS`  
 `b39e0ace38a0        tomcat:8.0     0.0.0.0:8888->8080/tcp`
 
-3. Run CI/CD Server: Pull Jenkins docker image and run it
-* `$ docker run -it --rm -d -p 8080:8080 jenkins`    
-* `$ docker ps`  
-`CONTAINER ID        IMAGE         PORTS`  
-`b39e0ace38a0        jenkins       0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp`
+3. Run CI/CD Server: (in either of the following ways)
+* Pull Jenkins docker image and run it
+  * `$ docker run -it --rm -d -p 8080:8080 jenkins`    
+  * `$ docker ps`  
+  `CONTAINER ID        IMAGE         PORTS`  
+  `b39e0ace38a0        jenkins       0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp` . 
+* Download, install, and run jenkins.war file
+  * `$ java -jar jenkins.war`
 * Using the IP and port, open the Jenkins page in web browser    
 `https://0.0.0.0:8080`
 * Jenkins initial setup is required using an admin user created and a password generated   
