@@ -8,12 +8,12 @@
   * `$ docker run -it --rm -d -p 9090:8080 tomcat:8.0`
   * `$ docker ps`  
   `CONTAINER ID        IMAGE          PORTS`  
-  `b39e0ace38a0        tomcat:8.0     0.0.0.0:9090->8080/tcp`
+  `b39e0ace38a0        tomcat:8.0     0.0.0.0:8088->8080/tcp`
 * Download, install, and run startup.sh script
   * Set the desired connector port in *$TOMCAT_HOME/conf/server.xml* file
   * `$ $TOMCAT_HOME/bin/startup.sh`
   * `$ ps -ef | grep tomcat`  
- 501 11066     1   0  1:40PM ??         0:06.20 /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java -Djava.util.logging.config.file=/usr/local/apache-tomcat-9.0.14/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /usr/local/apache-tomcat-9.0.14/bin/bootstrap.jar:/usr/local/apache-tomcat-9.0.14/bin/tomcat-juli.jar -Dcatalina.base=/usr/local/apache-tomcat-9.0.14 -Dcatalina.home=/usr/local/apache-tomcat-9.0.14 -Djava.io.tmpdir=/usr/local/apache-tomcat-9.0.14/temp org.apache.catalina.startup.Bootstrap start 
+ 501 11066     1   0  1:40PM ??         0:06.20 /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java -Djava.util.logging.config.file=/usr/local/apache-tomcat-x.x.xconf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /usr/local/apache-tomcat-x.x.x/bin/bootstrap.jar:/usr/local/apache-tomcat-x.x.x/bin/tomcat-juli.jar -Dcatalina.base=/usr/local/apache-tomcat-x.x.x -Dcatalina.home=/usr/local/apache-tomcat-x.x.x -Djava.io.tmpdir=/usr/local/apache-tomcat-x.x.x/temp org.apache.catalina.startup.Bootstrap start 
 * Using the IP and port, open the Tomcat page in web browser  
 `https://[IP]:[PORT]`
 
@@ -49,11 +49,17 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Set Web Server credentials -> Global credentials
   * Use the user (from *$TOMCAT_HOME/conf/tomcat-users.xml*) with *manager-script* role
 
-4. **Create New Job for Continuous Integration (CI) Pipeline**
-* Specify project name: helloworld
-* Specify repository URL: https://github.com/likarajo/devops.git
-* Specify branch: master
+4. **Create New Job and configure for Continuous Integration (CI) Pipeline**
+* Specify Project name: helloworld
+* Specify Repository URL: https://github.com/likarajo/devops.git
+* Specify Branch: master
 * Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
+
+5. **Configure the job for Continuous Deployment (CD) Pipeline**
+* Specify Post-build Actions: Deploy war/ear to a container
+  * WAR/EAR Files: \**/*.war (the workspace directory)
+  * Add Container: Tomcat 8.x; Credentials:<of manager-script user>; URL:http://localhost:8088/
+ 
 
 
 
