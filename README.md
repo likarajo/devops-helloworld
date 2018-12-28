@@ -1,9 +1,9 @@
 # devops
-1. Create and push source code to repository: Maven web project in GitHub
+1. **Create and push source code to repository*: Maven web project in GitHub
 * `$ mvn archetype:generate -DgroupId=io.github.likarajo -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp`
 * push the project files to Git repository
 
-2. Run Web Server: (in either of the follwing ways)
+2. **Run Web Server**: (in either of the follwing ways)
 * Pull Tomcat docker image and run it
   * `$ docker run -it --rm -d -p 9090:8080 tomcat:8.0`
   * `$ docker ps`  
@@ -15,7 +15,7 @@
 * Using the IP and port, open the Tomcat page in web browser  
 `https://[IP]:[PORT]`
 
-3. Run CI/CD Server: (in either of the following ways)
+3. **Run CI/CD Server**: (in either of the following ways)
 * Pull Jenkins docker image and run it
   * `$ docker run -it --rm -d -p 8080:8080 jenkins`    
   * `$ docker ps`  
@@ -28,7 +28,7 @@
 * Jenkins initial setup is required using an admin user created and a password generated   
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>`
 
-4. Create New Job for Continuous Integration (CI) Pipeline
+4. **Create New Job for Continuous Integration (CI) Pipeline**
 * Specify project name: helloworld
 * Specify repository URL: https://github.com/likarajo/devops.git
 * Specify branch: master
