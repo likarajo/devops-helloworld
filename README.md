@@ -1,10 +1,10 @@
 # CI/CD
 
-1. **Create and push source code to repository**: Maven web project in GitHub
+### **Create and push source code to repository**: Maven web project in GitHub
 * `$ mvn archetype:generate -DgroupId=io.github.likarajo -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp`
 * push the project files to Git repository
 
-2. **Run Web Server**: (in either of the following ways)
+### **Run Web Server**: (in either of the following ways)
 
 * Pull Tomcat docker image and run it
   * `$ docker run -it --rm -d -p 9090:8080 tomcat:8.0`
@@ -21,7 +21,7 @@
 * Using the IP and port, open the Tomcat page in web browser  
 `https://[IP]:[PORT]`
 
-3. **Configure the web server**
+### **Configure the web server**
 
 * Create role(s) and user(s) in the file *$TOMCAT_HOME/conf/tomcat-users.xml*  
   >`<role rolename="manager-gui"/>`  
@@ -30,7 +30,7 @@
   `<user username="deployer" password="deployer" roles="manager-script"/>`  
   `<user username="tomcat" password="passw0rd" roles="manager-gui/>`
 
-4. **Run CI/CD Server**: (in either of the following ways)
+### **Run CI/CD Server**: (in either of the following ways)
 
 * Pull Jenkins docker image and run it
   * `$ docker run -it --rm -d -p 8080:8080 jenkins`    
@@ -49,7 +49,7 @@
 * Jenkins initial setup is required using an admin user created and a password generated   
 which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$docker logs <container id>` 
 
-5. **Configure the CI/CD server**
+### **Configure the CI/CD server**
 
 * Manage Plugins
   * Install *Git* plugin
@@ -69,7 +69,7 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Configure System
   * Add GitHub Server (use the GitHub access token)
 
-6. **Create New Job and configure for Integration i.e. Build**
+### **Create New Job and configure for Integration i.e. Build**
 
 * Specify Project name: devops-helloworld
 * General>GitHub Project>Project URL: https://github.com/likarajo/devops-helloworld
@@ -78,7 +78,7 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 * Specify Build -> Root POM: helloworld/pom.xml; Goals and Options: clean install package
 * Build the project
 
-7. **Configure the job for Deployment**
+### **Configure the job for Deployment**
 
 * Specify Post-build Actions: Deploy war/ear to a container
   * WAR/EAR Files: \**/*.war (the workspace directory)
@@ -86,11 +86,11 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 
 * Build the project
  
-8. **On successful build**
+### **On successful build**
 
 * the war file gets deployed to *$TOMCAT_HOME/webapps*
 
-9. **Configure the job for Continuous Integration/Build and Deployment (CI CD)**
+### **Configure the job for Continuous Integration/Build and Deployment (CI CD)**
 
 * Check the required option(s) in Build Triggers section
   * GitHub hook trigger for GITScm polling
