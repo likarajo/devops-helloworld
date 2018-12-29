@@ -3,7 +3,7 @@
 * `$ mvn archetype:generate -DgroupId=io.github.likarajo -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp`
 * push the project files to Git repository
 
-2. **Run Web Server**: (in either of the follwing ways)
+2. **Run Web Server**: (in either of the following ways)
 * Pull Tomcat docker image and run it
   * `$ docker run -it --rm -d -p 9090:8080 tomcat:8.0`
   * `$ docker ps`  
