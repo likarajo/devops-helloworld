@@ -76,6 +76,7 @@ which can be found at: /var/jenkins_home/secrets/initialAdminPassword OR by `$do
 7. **Configure the job for Continuous Integration/Build and Deployment (CI CD)**
 * Check the required option(s) in Build Triggers section
   * GitHub hook trigger for GITScm polling
+  * Poll SCM: Schedule \*/2 \* \* \* \* (every two minutes poll the SCM (Git in this case) to check for changes)
 
  
 
